@@ -1,8 +1,10 @@
 const{src, dest, watch} = require("gulp");
 const sass = require("gulp-sass")(require("sass"));//requerimos de nuestras dependencias instaladas.
+const plumber = require("gulp-plumber") //Imporartamos otra dependencia, para que no interrumpa nuestro workflow
 
 function css (done) {
     src("src/scss/**/*.scss") //Identificamos el archivo sass, en este caso, todos
+        .pipe(plumber())//--iria primero para que no interrumpa nuestro workflow
         .pipe(sass()) // compilamos el archivo sass = const sass....
         .pipe(dest("build/css")) //almacenamos en disco
     
