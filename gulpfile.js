@@ -31,5 +31,5 @@ function tarea (done){
 }
 
 exports.tarea = tarea; //codigoNodeJS + nombre = función
-//asi es como lo mandamos a llamar por consola con el comando "npx gulp tarea" (nombre de la variable gulp = , parte izquierda)
+//asi es como mandamos a llamar por consola con el comando "npx gulp tarea" (nombre de la variable gulp = , parte izquierda)
 */

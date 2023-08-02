@@ -1,0 +1,46 @@
+@use 'base/variables' as v; //Importamos
+@use 'base/mixins' as m;
+
+.header{
+    background-color: v.$verde;    
+
+        h1{//anidación
+            color: v.$blanco;
+            text-align: center;
+                @include m.tablet {
+                    margin: 0;
+                }
+        }
+
+        .contenedor-header{
+            padding: 2rem;
+                @include m.tablet {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+        }
+}
+
+.navegacion-principal{
+
+    a{
+        display: block;
+        text-align: center;
+        color: v.$blanco;
+        font-size: 2.4rem;
+        margin-bottom: 1rem;
+            @include m.tablet {
+                margin-bottom: 0;
+            }
+
+        &:hover{ // el & elimima el espacio al compilar la hoja de estilos
+            color: v.$amarillo;
+        }        
+    }
+
+    @include m.tablet {
+        display: flex;
+        gap: 2rem;
+    }
+}

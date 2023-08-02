@@ -1,0 +1,29 @@
+@use "variables" as v;
+
+/* @mixin heading ($color){ //creamos un mixin que recibe un parametro
+    color: $color;
+} */
+
+@mixin phone {
+    @media(min-width: v.$phone){
+        @content; //para que soporte nuestro bloque de codigo
+    }
+}
+
+@mixin tablet {
+    @media(min-width: v.$tablet){
+        @content; 
+    }
+}
+
+@mixin desktop {
+    @media(min-width: v.$desktop){
+        @content; 
+    }
+}
+
+@mixin desktopXL {
+    @media(min-width: v.$desktopXL){
+        @content; 
+    }
+}

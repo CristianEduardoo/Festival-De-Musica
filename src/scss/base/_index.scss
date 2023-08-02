@@ -1,2 +1,4 @@
-@forward "variables"; //indica donde estan los archivos
+@forward "variables"; //indica donde estan los archivos, el orden es importante
+@forward "mixins";
 @forward "normalize";
+@forward "globales";
