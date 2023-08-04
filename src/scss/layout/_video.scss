@@ -16,6 +16,10 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        /* justify-content: flex-start; Coloca contenido arriba 
+        @include m.desktop {
+            justify-content: center;
+        } */
     }
 
     video{//es el elemento
@@ -30,6 +34,7 @@
 
     .contenido-video{
         z-index: 1;//para solucinar el resaltado de las palabras
+        //margin-top: 2.5rem;
         h2{
             color: v.$blanco;
             margin: 0;
