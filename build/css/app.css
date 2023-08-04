@@ -1,5 +1,5 @@
-/* @mixin heading ($color){ //creamos un mixin que recibe un parametro
-    color: $color;
+/* @mixin heading ($color){ //creamos un mixin que recibe un parametro ($color: blue) parametro por default
+    color: $color;          //perfecto para usar los mediaQueries
 } */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -366,7 +366,7 @@ h3 {
 }
 @media (min-width: 768px) {
   .header h1 {
-    margin: 0;
+    margin: 0 9rem 0 0;
   }
 }
 .header .contenedor-header {
@@ -384,8 +384,9 @@ h3 {
   display: block;
   text-align: center;
   color: #ffffff;
-  font-size: 2.4rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
+  white-space: nowrap;
 }
 @media (min-width: 768px) {
   .navegacion-principal a {

@@ -7,9 +7,11 @@
         h1{//anidación
             color: v.$blanco;
             text-align: center;
-                @include m.tablet {
-                    margin: 0;
+                @include m.tablet { //con la directiva @include, mandamos a llamar al mixin, previamente inportado.
+                    margin: 0 9rem 0 0;
                 }
+
+                
         }
 
         .contenedor-header{
@@ -28,8 +30,9 @@
         display: block;
         text-align: center;
         color: v.$blanco;
-        font-size: 2.4rem;
+        font-size: 2rem;
         margin-bottom: 1rem;
+        white-space: nowrap; // Evita el salto de línea
             @include m.tablet {
                 margin-bottom: 0;
             }

@@ -1,12 +1,12 @@
 @use "variables" as v;
 
-/* @mixin heading ($color){ //creamos un mixin que recibe un parametro
-    color: $color;
-} */
+/* @mixin heading ($color){ //creamos un mixin que recibe un parametro ($color: blue) parametro por default
+    color: $color;          //perfecto para usar los mediaQueries
+} */                        //todo los que comiensa con @ son directivas de SCSS
 
 @mixin phone {
     @media(min-width: v.$phone){
-        @content; //para que soporte nuestro bloque de codigo
+        @content; //para que soporte nuestro bloque de codigo en el layout 
     }
 }
 
