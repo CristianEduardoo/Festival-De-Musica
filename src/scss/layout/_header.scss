@@ -2,16 +2,14 @@
 @use 'base/mixins' as m;
 
 .header{
-    background-color: v.$verde;    
+    background-color: v.$verde;   
 
         h1{//anidación
             color: v.$blanco;
             text-align: center;
                 @include m.tablet { //con la directiva @include, mandamos a llamar al mixin, previamente inportado.
                     margin: 0 15rem 0 0;
-                }
-
-                
+                }                
         }
 
         .contenedor-header{
