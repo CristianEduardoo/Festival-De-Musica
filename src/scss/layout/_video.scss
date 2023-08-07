@@ -4,7 +4,7 @@
 .video{//es la clase
     position: relative;
     max-height: 70rem;
-    //min-height: 30rem;
+    min-height: 30rem;
     overflow: hidden;
 
     .overlay{
@@ -15,26 +15,26 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        /* justify-content: flex-start; Coloca contenido arriba 
+        justify-content: flex-start; //Coloca contenido arriba 
         @include m.desktop {
             justify-content: center;
-        } */
+        } 
     }
 
-    video{//es el elemento
-        width: 100%; //auto
+    video{ //es el elemento
+        width: 100%;
         height: 100%;
         display: block;//para cuadrar el video con el gradiente
-        /* @include m.tablet {
-            width: 100%;
-        } */
-        //object-fit: cover; // Ajusta el video al contenedor
+        min-height: 30rem;
+        object-fit: cover; //Ajusta el video al contenedor
     }
 
     .contenido-video{
         z-index: 1;//para solucinar el resaltado de las palabras
-        //margin-top: 2.5rem;
+        margin-top: 4.5rem;
+        @include m.tablet {
+            margin-top: 3rem;    
+        }
         h2{
             color: v.$blanco;
             margin: 0;
