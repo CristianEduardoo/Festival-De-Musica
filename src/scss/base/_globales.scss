@@ -50,5 +50,7 @@ h3{
 
 img{
     max-width: 100%;
+    width: 100%; //para acomodar el width y height el HTML predeterminado
+    height: auto; //mismo
     display: block;
 }
