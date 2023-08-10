@@ -22,8 +22,16 @@ function css(done) {
 }
 
 /*** Funcion para el watch ***/
+function javaScript (done){
+    src("src/js/**/*.js")
+        .pipe(dest("build/js"));
+
+    done();
+}
+
 function dev(done) {
-    watch("src/scss/**/*.scss", css) //1º la ruta del archivo, 2ª la funcion a ejecutar
+    watch("src/scss/**/*.scss", css); //1º la ruta del archivo, 2ª la funcion a ejecutar
+    watch("src/js/**/*.js", javaScript);
 
     done();
 }
@@ -60,10 +68,11 @@ function versionAvif(done) {
 
 
 exports.css = css;
+exports.js = javaScript;
 exports.versionWebp = versionWebp;
 exports.imagenes = imagenes;
 exports.versionAvif = versionAvif;
-exports.dev = parallel(versionWebp, imagenes, versionAvif, dev);
+exports.dev = parallel(versionWebp, imagenes, versionAvif, javaScript, dev);
 
 
 /*
