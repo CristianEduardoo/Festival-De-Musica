@@ -7,6 +7,7 @@
         h1{//anidación
             color: v.$blanco;
             text-align: center;
+            margin-bottom: 3rem;
                 @include m.tablet { //con la directiva @include, mandamos a llamar al mixin, previamente inportado.
                     margin: 0 15rem 0 0;
                 }                
