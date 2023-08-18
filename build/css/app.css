@@ -710,3 +710,13 @@ img {
 .basico {
   margin-bottom: 6rem;
 }
+
+.site-footer {
+  background-color: #f53756;
+  padding: 1rem;
+}
+.site-footer p {
+  margin: 0;
+  text-align: center;
+  color: #ffffff;
+}
