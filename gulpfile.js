@@ -1,22 +1,33 @@
-const { src, dest, watch, parallel } = require("gulp");//funcionalidades de la libreria de Gulp, require("gulp") = lo extraemos
+const { src, dest, watch, parallel } = require('gulp');//funcionalidades de la libreria de Gulp, require("gulp") = lo extraemos
 
 //DEPENDENCIAS
 //CSS
-const sass = require("gulp-sass")(require("sass"));//requerimos de nuestras dependencias instaladas.
-const plumber = require("gulp-plumber") //Imporartamos otra dependencia, para que no interrumpa nuestro workflow
+const sass = require('gulp-sass')(require('sass'));//requerimos de nuestras dependencias instaladas.
+const plumber = require('gulp-plumber') //Imporartamos otra dependencia, para que no interrumpa nuestro workflow
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
+const postcss = require('gulp-postcss');
+const sourcemaps = require('gulp-sourcemaps')
 
-//IMAGENES
-const webp = require("gulp-webp"); //extencion webp
-const imagemin = require("gulp-imagemin"); //comprimidor de imagenes
-const cache = require("gulp-cache");
-const avif = require("gulp-avif");
+//Imagenes
+const webp = require('gulp-webp'); //extencion webp
+const imagemin = require('gulp-imagemin'); //comprimidor de imagenes
+const cache = require('gulp-cache');
+const avif = require('gulp-avif');
+
+//JavaScript
+const terser = require('gulp-terser-js'); 
+
 
 /*** COMPILAR EL ARCHIVO DE SASS CON 3 PASOS***/
 function css(done) {
     src("src/scss/**/*.scss") //1. Identificamos el archivo sass, en este caso todos
+        .pipe(sourcemaps.init())
         .pipe(plumber())//--iria primero para que no interrumpa nuestro workflow
         .pipe(sass()) //2. compilamos el archivo sass = const sass....
-        .pipe(dest("build/css")) //3. almacenamos en disco
+        .pipe(postcss([autoprefixer(), cssnano()]))
+        .pipe(sourcemaps.write('.'))
+        .pipe(dest('build/css')) //3. almacenamos en disco
 
     done();//callback, que avisa a gulp que hemos terminado.
 }
@@ -24,6 +35,9 @@ function css(done) {
 /*** Funcion para el watch ***/
 function javaScript (done){
     src("src/js/**/*.js")
+      /*.pipe(sourcemaps.init()) //minificamos el codigo JS
+        .pipe(terser())
+        .pipe(sourcemaps.write('.')) */
         .pipe(dest("build/js"));
 
     done();
