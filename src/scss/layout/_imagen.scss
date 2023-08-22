@@ -1,16 +1,21 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
-.video { //es la clase
+.imagenFestival { 
     position: relative;
-    max-height: 70rem;
+    max-height: 80rem;
     min-height: auto;
     overflow: hidden;
 
+    img { //es el elemento
+        width: 100%;
+        height: 100%;
+        min-height: 40rem;
+        object-fit: cover; //Ajusta al contenedor
+    }
+
     .overlay {
         position: absolute;
-        background: rgb(126, 2, 195);
-        background: linear-gradient(270deg, rgba(126, 2, 195, 0.5) 0%, rgba(255, 0, 110, 0.3) 100%);
         height: 100%;
         width: 100%;
         display: flex;
@@ -19,15 +24,7 @@
         /* justify-content: flex-start; //Coloca contenido arriba  */
     }
 
-    video { //es el elemento
-        width: 100%;
-        height: 100%;
-        display: block; //para cuadrar el video con el gradiente
-        min-height: 45rem;
-        object-fit: cover; //Ajusta el video al contenedor
-    }
-
-    .contenido-video {
+    .contenido-imagen {
         z-index: 1; //soluciona el problema del resaltado
         h2 {
             color: v.$blanco;
